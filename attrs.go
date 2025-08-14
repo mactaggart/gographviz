@@ -25,11 +25,17 @@ type Attrs map[Attr]string
 func NewAttrs(m map[string]string) (Attrs, error) {
 	as := make(Attrs)
 	for k, v := range m {
-		if err := as.Add(k, v); err != nil {
+		if err := as.AddWithoutValidation(k, v); err != nil {
 			return nil, err
 		}
 	}
 	return as, nil
+}
+
+// AddWithoutValidation adds an attribute name and value without validation
+func (attrs Attrs) AddWithoutValidation(field string, value string) error {
+	attrs.add(Attr(field), value)
+	return nil
 }
 
 // Add adds an attribute name and value.
