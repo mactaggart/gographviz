@@ -2,7 +2,7 @@
 
 package parser
 
-import "github.com/awalterschulze/gographviz/ast"
+import "github.com/mactaggart/gographviz/ast"
 
 type (
 	ProdTab      [numProductions]ProdTabEntry

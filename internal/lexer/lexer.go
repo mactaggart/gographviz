@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 	"unicode/utf8"
 
-	"github.com/awalterschulze/gographviz/internal/token"
+	"github.com/mactaggart/gographviz/internal/token"
 )
 
 const (
