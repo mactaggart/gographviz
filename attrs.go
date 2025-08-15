@@ -40,12 +40,7 @@ func (attrs Attrs) AddWithoutValidation(field string, value string) error {
 
 // Add adds an attribute name and value.
 func (attrs Attrs) Add(field string, value string) error {
-	a, err := NewAttr(field)
-	if err != nil {
-		return err
-	}
-	attrs.add(a, value)
-	return nil
+	return attrs.AddWithoutValidation(field, value)
 }
 
 func (attrs Attrs) add(field Attr, value string) {
